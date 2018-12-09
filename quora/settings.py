@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 ALLOWED_HOSTS = ['192.168.0.20']
+ALLOWED_HOSTS = ['lucid-carson-c52474.netlify.com']
+ALLOWED_HOSTS = ['laclara.com']
+
 AUTH_USER_MODEL = 'core.User'
 # It can be kept anywhere in the file but good to keepjust after Allowed hosts.
 
