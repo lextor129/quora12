@@ -1,0 +1,81 @@
+<div class="general">
+
+<div>
+
+
+  <table>
+     <tr>
+     <th>Customer</th>
+     <th>quantity</th>
+     <th>price</th>
+     <th>type</th>
+     <th>pub_date</th>
+
+
+     </tr>
+
+      {% for customer in posts %}
+
+
+      <tr>
+    <td class="td_date"><a href="{% url 'core:pastebin_paste_detail'% paste.id}">{{ customer.id }}</a></td>
+    <td class="td_40">{{ customer.quantity  }}</td>
+    <td class="td_40">{{ customer.price  }}</td>
+    <td class="td_40">{{ customer.type  }}</td>
+    <td class="td_date">{{ customer.pub_date   }}</td>
+     </tr>
+           {% endfor %}
+
+    <tr>
+
+     <td>{{count}}</td>
+     <td>{{quantityy}}</td>
+     <td>{{pricee}}</td>
+     <td>{{type_a}}</td>
+ </tr>
+</table>
+
+
+</div>
+
+
+
+<div>
+
+
+   <table>
+     <tr>
+     <th>price_quantity</th>
+
+     </tr>
+    {% for f in price_p %}
+     <tr>
+    <td>{{ f.result }}</td>
+     </tr>
+       {% endfor %}
+
+
+     <tr>
+   <td>{{total_price_p}}</td>
+     </tr>
+
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+
+
+        <style type="text/css">
+
+       .general{
+           margin:0px 0px 0px 0px;
+       }
+
+       .general > div{
+       padding:1em;
+       margin:0px 0px 0px 0px;
+       padding:0px 0px 0px 0px;
+
+       }
+
+       tr,th,td{
+
+        height:40px;
+       }
+       table, th, td {
+       border: 1px solid black;
+
+
+        }
+        th {
+            text-align: left;
+            font-size: 16px;
+            }
+         td {
+            font-size: 11px;
+            }
+
+         .unic{
+           height:40px;
+           width:40px;
+           font-size: 14px;
+
+
+         }
+
+
+
+        </style>
+    </head>
+
+ <body>
+
+
+    <div class="container">
+
+
+      <div class="row justify-content-center">
+        <div class="col-8">
+<div class="general">
+<div>
+  <table>
+      <tr>
+     <th>#</th>
+      <th>Nombre</th>
+      <th>Cantidad_P</th>
+      <th>Precio</th>
+      <th>Tipo</th>
+       <th>Fecha</th>
+        <th>PxC</th>
+     </tr>
+      {% for customer,f in pospri%}
+        <tr>
+            <th scope="row">{{ customer.id }}</th>
+            <td class="td_date">{{ customer.customer }}</td>
+            <td class="td_40">{{ customer.quantity  }}</td>
+            <td class="td_40">{{ customer.price  }}</td>
+            <td class="td_40">{{ customer.type  }}</td>
+            <td class="td_date">{{ customer.pub_date   }}</td>
+            <td>{{ f.result }}</td>
+        </tr>
+        {% endfor%}
+      <tr>
+      <td></td>
+     <td>{{count}}</td>
+        <td>{{quantityy}}</td>
+        <td>{{pricee}}</td>
+        <td>A_ {{type_a}}<br/>AA {{type_aa}} <br/>EX {{type_extra}}<br/>B_ {{type_b}}</td>
+        <td></td>
+        <td>{{total_price_p}}</td>
+ </tr>
+</table>
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+
+

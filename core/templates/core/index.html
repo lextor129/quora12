@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Eggs</title>
+  </head>
+  <body>
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+      <a class="nav-link" href='{% url "MyView" %}'>Crear pedido</a>
+
+  </li>
+  <li class="nav-item">
+     <a class="nav-link" href='{% url "table_eggs" %}'>Pedidos</a>
+  </li>
+  <li class="nav-item">
+
+      <a class="nav-link" href='{% url "pdf" %}'>Generar PDF</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href='{% url "logout-view" %}'>Salir</a>
+  </li>
+</ul>
+
+    <div class="container">
+
+
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h1 class="mt-2">Eggs</h1>
+          <hr class="mt-0 mb-4">
+          {% block content %}
+            <form action="" method="POST">
+{% csrf_token %}
+<table>
+{{ form.as_table }}
+
+</table>
+<input type="submit" name="login" value="Login" class="btn btn-primary"  />
+</form>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

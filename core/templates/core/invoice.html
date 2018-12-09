@@ -1,0 +1,253 @@
+
+ <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Eggs</title>
+      <style type="text/css">
+
+      * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+.bd-content {
+    -ms-flex-order: 1;
+    order: 1;
+}
+
+
+
+
+
+
+
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+div {
+    display: block;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+      }
+.bd-example {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem -15px 0;
+    border: solid #f8f9fa;
+    border-width: .2rem 0 0;
+}
+
+.bd-example::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+
+.ss{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+      .entry-box__el, .entry-body__el {
+    min-height: 240px;
+    padding: 15px;
+    border: 1px solid #e6e6eb;
+    margin: 0 0 15px;
+    line-height: 1.5em;
+
+}
+
+
+
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    border-collapse: collapse;
+    }
+
+    table {
+    display: table;
+    border-collapse: separate;
+    border-spacing:-webkit-border-horizontal-spacing: 2px;
+    -webkit-border-vertical-spacing: 2px;
+    border-top-color: grey;
+    border-right-color: grey;
+    border-bottom-color: grey;
+    border-left-color: grey;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(222, 226, 230);
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+}
+
+.table th {
+    padding: .75rem;
+    padding-top: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(222, 226, 230);
+}
+
+th {
+    text-align: inherit;
+    font-weight: bold;
+    display: table-cell;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    padding-top: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(222, 226, 230);
+}
+
+
+
+        </style>
+
+  </head>
+  <body>
+
+  <header >
+    <ul class="nav nav-tabs">
+  <li class="nav-item">
+      <a class="nav-link" href='{% url "MyView" %}'>Crear pedido</a>
+
+  </li>
+  <li class="nav-item">
+     <a class="nav-link" href='{% url "table_eggs" %}'>Pedidos</a>
+  </li>
+  <li class="nav-item">
+
+      <a class="nav-link" href='{% url "pdf" %}'>Generar PDF</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href='{% url "logout-view" %}'>Salir</a>
+  </li>
+</ul>
+
+</header>
+
+    <div class="container">
+<h1 class="bd-title" id="content">Ventas</h1>
+
+            <div class="bd-example">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Cantidad_P</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Tipo</th>
+       <th scope="col">Fecha</th>
+        <th scope="col">PxC</th>
+
+    </tr>
+  </thead>
+  <tbody>
+        {% for customer,f in pospri%}
+        <tr>
+            <th scope="row">{{ customer.id }}</th>
+            <td class="td_date"><a href="{% url 'edit' customer.id  %}">{{ customer.customer }}</a></td>
+            <td class="td_40">{{ customer.quantity  }}</td>
+            <td class="td_40">{{ customer.price  }}</td>
+            <td class="td_40">{{ customer.type  }}</td>
+            <td class="td_date">{{ customer.pub_date   }}</td>
+            <td>{{ f.result }}</td>
+        </tr>
+        {% endfor%}
+    <tr>
+        <td></td>
+     <td>{{count}}</td>
+        <td>{{quantityy}}</td>
+        <td>{{pricee}}</td>
+        <td>A_ {{type_a}}<br/>AA {{type_aa}} <br/>EX {{type_extra}}<br/>B_ {{type_b}}</td>
+        <td></td>
+        <td>{{total_price_p}}</td>
+   </tr>
+  </tbody>
+</table>
+</div>
+    </div>
+  </body>
+</html>
+
+
+
